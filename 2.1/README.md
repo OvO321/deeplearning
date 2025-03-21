@@ -1,29 +1,64 @@
-# 线性回归
-
-
+# 1. 全连接神经网络
 
 ## 问题描述：
 
-有一个函数![image](http://latex.codecogs.com/gif.latex?f%3A%20%5Cmathbb%7BR%7D%5Crightarrow%20%5Cmathbb%7BR%7D) ，使得。现 ![image](http://latex.codecogs.com/gif.latex?y%20%3D%20f%28x%29)在不知道函数 $f(\cdot)$的具体形式，给定满足函数关系的一组训练样本![image](http://latex.codecogs.com/gif.latex?%5Cleft%20%5C%7B%20%5Cleft%20%28%20x_%7B1%7D%2Cy_%7B1%7D%20%5Cright%20%29%2C...%2C%5Cleft%20%28%20x_%7BN%7D%2Cy_%7BN%7D%20%5Cright%20%29%20%5Cright%20%5C%7D%2CN%3D300)，请使用线性回归模型拟合出函数$y=f(x)$。
-
-(可尝试一种或几种不同的基函数，如多项式、高斯或sigmoid基函数）
+​	利用numpy 和tensorflow 、pytorch 搭建全连接神经网络。使用numpy 实现此练习需要自己手动求导，而tensorflow 和pytorch 具有自动求导机制。
 
 
 
 
-## 数据集: 
 
- 	根据某种函数关系生成的train 和test 数据。
+## 数据集:
+
+ 	MNIST数据集包括60000张训练图片和10000张测试图片。图片样本的数量已经足够训练一个很复杂的模型（例如 CNN的深层神经网络）。它经常被用来作为一个新 的模式识别模型的测试用例。而且它也是一个方便学生和研究者们执行用例的数据集。除此之外，MNIST数据集是一个相对较小的数据集，可以在你的笔记本CPUs上面直接执行
 
 
 
-## 题目要求： 
 
-- [ ] 按顺序完成 `exercise-linear_regression.ipynb`中的填空 
-    1. 先完成最小二乘法的优化 (参考书中第二章 2.3节中的公式)
-    1. 附加题：实现“多项式基函数”以及“高斯基函数”（可参考PRML）
-    1. 附加题：完成梯度下降的优化 (参考书中第二章 2.3节中的公式)
-    
-- [ ] 参照`lienar_regression-tf2.0.ipnb`使用tensorflow2.0 使用梯度下降完成线性回归
-- [ ] 使用训练集train.txt 进行训练，使用测试集test.txt 进行评估（标准差），训练模型时请不要使用测试集。
+
+## 题目要求：
+
+​	补全本章节中所有*.ipynb文件中提示补全的部分。
+
+
+
+
+
+# 2. 函数拟合
+
+## 问题描述：
+
+​	理论和实验证明，一个两层的ReLU网络可以模拟任何函数[1~5]。请自行定义一个函数, 并使用基于ReLU的神经网络来拟合此函数。
+
+
+
+
+## 要求: 
+
+ 	
+
+- 请自行在函数上采样生成训练集和测试集，使用训练集来训练神经网络，使用测试集来验证拟合效果。
+- 可以使用深度学习框架来编写模型，如tensorflow、pytorch、keras等。
+  - 如果不使用上述框架，直接用NumPy实现可以最高加5分的附加分。
+- 提交时请一并提交代码和报告。
+  - 代码建议注释清楚（5分）
+  - 报告至少应包含以下部分：（5分）
+    - 函数定义、数据采集、模型描述、拟合效果。
+
+
+## 示例： 
+
+![](fitting.jpg)
+
+## 参考文献： 
+
+[1] G. Cybenko. 1989. Approximation by superpositions of a sigmoidal function.
+
+[2] K. Hornik, M. Stinchcombe, and H. White. 1989. Multilayer feedforward networks are universal approximators.
+
+[3] Moshe Leshno, et al. 1993. Multilayer feedforward networks with a nonpolynomial activation function can approximate any function
+
+[4] Vinod Nair and Geoffrey E. Hinton. 2010. Rectified linear units improve restricted boltzmann machines.
+
+[5] Xavier Glorot, Antoine Bordes, Yoshua Bengio. 2011. Deep Sparse Rectifier Neural Networks. PMLR 15:315-323.
 
